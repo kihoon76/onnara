@@ -6,8 +6,7 @@
  	 handlebars	= require('express3-handlebars'),
  	 bodyParser	= require('body-parser'),
  	 path		= require('path'),
- 	 log4js		= require('log4js'),
- 	 fileUpload = require('express-fileupload');
+ 	 log4js		= require('log4js');
 
  log4js.configure({
 	appenders: {naver: {type:'console'}},
