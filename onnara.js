@@ -31,7 +31,6 @@
  
  app.use(express.static(path.join(__dirname, 'public')));
  app.use(bodyParser.urlencoded({ extended: true}));
- app.use(fileUpload());
  app.use('/', require('./routes/index'));
 
  
