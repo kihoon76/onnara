@@ -13,7 +13,7 @@ router.use(function preProcess(req, res, next) {
 		logger.debug('파라미터  query : ', req.query);
 	}
 	else {
-		logger.debug('파라미터 params: ', req.params);
+		logger.debug('파라미터 params: ', req.body);
 	}
 	
     next();
