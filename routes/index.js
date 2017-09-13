@@ -20,7 +20,7 @@ router.use(function preProcess(req, res, next) {
 });
 
 router.get('/api/onnara/pnucode', function(req, res) {
-	db.getPnuCode('[데이터수집].[dbo].[SEL_온나라수집PNU_고유번호]', res);
+	db.getPnuCode('[데이터수집].[dbo].[SEL_온나라수집PNU_고유번호]', req, res);
 });
 
 router.get('/api/onnaraform', function(req, res) {
