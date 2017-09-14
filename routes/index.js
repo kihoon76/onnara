@@ -23,12 +23,8 @@ router.get('/api/onnara/pnucode', function(req, res) {
 	db.getPnuCode('[데이터수집].[dbo].[SEL_온나라수집PNU_고유번호]', req, res);
 });
 
-router.get('/api/onnaraform', function(req, res) {
-	res.render('test', {title:'onnara'});
-});
-
 router.post('/api/onnara', function(req, res) {
-	db.setInsOnnaraImya2('[데이터수집].[dbo].[INS_Onnara_Imya_2]', {PnuSerial:req.body.PnuSerial, Imya:new Buffer(req.body.Imya)}, res);
+	db.setProcedure('[데이터수집].[dbo].' + req.body.p_nm, req, res);
 });
 
 module.exports = router;
