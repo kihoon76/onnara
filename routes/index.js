@@ -27,4 +27,14 @@ router.post('/api/onnara', function(req, res) {
 	db.setProcedure('[데이터수집].[dbo].' + req.body.p_nm, req, res);
 });
 
+router.get('/download', function(req, res) {
+	res.render('download');
+});
+
+router.get('/download/:ver', function(req, res) {
+	var ver = req.params.ver;
+	var file = __dirname + '/../download/' + ver + '/온나라' + ver + '.zip';
+	res.download(file);
+});
+
 module.exports = router;
