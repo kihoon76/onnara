@@ -10,6 +10,8 @@ $(function() {
     };
     
     var map = new daum.maps.Map(container.get(0), options); //지도 생성 및 객체 리턴
+    map.addOverlayMapTypeId(daum.maps.MapTypeId.USE_DISTRICT);
+    
     var imageSrc = 'http://hotplace.ddns.net:10001/resources/img/markerimg1.png', // 마커이미지의 주소입니다    
         imageSize = new daum.maps.Size(30, 36), // 마커이미지의 크기입니다
         imageOption = {offset: new daum.maps.Point(15, 36)}; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
@@ -50,6 +52,15 @@ $(function() {
         }
         catch(e) {
             alert(e.message);
+        }
+    }
+
+    window.ctrlJi = function(s) {
+        if(s == '1') {
+            map.addOverlayMapTypeId(daum.maps.MapTypeId.USE_DISTRICT);
+        }
+        else {
+            map.removeOverlayMapTypeId(daum.maps.MapTypeId.USE_DISTRICT);
         }
     }
 });
