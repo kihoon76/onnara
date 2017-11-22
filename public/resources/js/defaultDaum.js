@@ -10,11 +10,11 @@ $(function() {
     };
     
     var map = new daum.maps.Map(container.get(0), options); //지도 생성 및 객체 리턴
-    /*var imageSrc = 'http://hotplace.ddns.net:10001/img/markerimg1.png', // 마커이미지의 주소입니다    
-        imageSize = new daum.maps.Size(60, 76), // 마커이미지의 크기입니다
-        imageOption = {offset: new daum.maps.Point(30, 76)}; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
+    var imageSrc = 'http://hotplace.ddns.net:10001/resources/img/markerimg1.png', // 마커이미지의 주소입니다    
+        imageSize = new daum.maps.Size(30, 36), // 마커이미지의 크기입니다
+        imageOption = {offset: new daum.maps.Point(15, 36)}; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
 
-    var markerImage = new daum.maps.MarkerImage(imageSrc, imageSize, imageOption);*/
+    var markerImage = new daum.maps.MarkerImage(imageSrc, imageSize, imageOption);
 
     function _info(num) {
         return '<div class="customoverlay">' + num + '</div>';
@@ -25,8 +25,8 @@ $(function() {
 
             if(markerLog[num]) return;
             var marker =  new daum.maps.Marker({
-                position: new daum.maps.LatLng(lng, lat)
-                //image: markerImage
+                position: new daum.maps.LatLng(lng, lat),
+                image: markerImage
             });
 
             marker.setMap(map);
