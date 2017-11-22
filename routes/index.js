@@ -37,4 +37,13 @@ router.get('/download/:ver', function(req, res) {
 	res.download(file);
 });
 
+router.get('/map', function(req, res) {
+	var level = 1;
+	var lng = req.query.lng;
+	var lat = req.query.lat;
+	var level = req.query.level;
+
+	res.render('daummap', {lng:lng, lat:lat, level: level});
+});
+
 module.exports = router;
