@@ -1,6 +1,6 @@
 var express    = require('express'),
 	log4js	   = require('log4js'),
-	db         = require('../lib/db')();
+	//db         = require('../lib/db')();
 	
 var router     = express.Router();
 var logger	   = log4js.getLogger('index.js');
@@ -19,13 +19,13 @@ router.use(function preProcess(req, res, next) {
     next();
 });
 
-router.get('/api/onnara/pnucode', function(req, res) {
+/*router.get('/api/onnara/pnucode', function(req, res) {
 	db.getPnuCode('[데이터수집].[dbo].[SEL_온나라수집PNU_고유번호]', req, res);
 });
 
 router.post('/api/onnara', function(req, res) {
 	db.setProcedure('[데이터수집].[dbo].' + req.body.p_nm, req, res);
-});
+});*/
 
 router.get('/download', function(req, res) {
 	res.render('download');
