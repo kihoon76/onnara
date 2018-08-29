@@ -1,5 +1,5 @@
 var express    = require('express'),
-	log4js	   = require('log4js'),
+	log4js	   = require('log4js');
 	//db         = require('../lib/db')();
 	
 var router     = express.Router();
